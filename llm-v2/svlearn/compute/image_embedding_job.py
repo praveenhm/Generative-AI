@@ -4,6 +4,14 @@ import torch
 from imagebind import data
 from imagebind.models import imagebind_model
 from imagebind.models.imagebind_model import ModalityType
+from svlearn.config import ConfigurationMixin
+
+mixin = ConfigurationMixin()
+config = mixin.load_config()
+image_dir = config['documents']['image-dir']
+
+if not image_dir.endswith('/'):
+    image_dir += '/'
 
 device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
 
@@ -14,8 +22,7 @@ model.to(device)
 modality_info = {
     'image': {
         'type': ModalityType.VISION, 
-        'folder': '/Volumes/MacX_1TB/devX/data/image/images/25kphotos_sample/', 
-        #   'folder': '', 
+        'folder': image_dir, 
         'extensions': ['*.jpg', '*.jpeg', '*.png', '*.bmp']
     },
     'audio': {
@@ -77,7 +84,6 @@ def transform_output(output):
         for path in paths:
             transformed_result.append({
                 "type": modality,
-                # "link": "http://localhost:8006/static/" + path.replace("/Volumes/MacX_1TB/devX/data/image/images/25kphotos_sample/","")
                 "link": "http://localhost:8006/static/" + os.path.basename(path)
             })
     
@@ -90,3 +96,7 @@ audio_embeddings = precompute_embeddings('audio')
 
 # results = text_query(query='hills', search='image', topk=10)
 # print(results)
+
+
+
+
