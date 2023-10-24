@@ -80,7 +80,7 @@ Ray: python svlearn/service/rest/rayserve/sentence_embedding_service.py
 Job: python svlearn/compute/chunk_vectorizer.py
 
 12. Create a ElastiSearch index, check service is running
-Srevice URL: https://localhost:9200, If error, check need to modify for ca_cert
+Service URL: https://localhost:9200, If error, check need to modify for ca_cert
 python svlearn/compute/es_indexer_job.py
 
 13. Create a Faiss index
@@ -91,9 +91,12 @@ Ray: python svlearn/service/rest/rayserve/faiss_index_builder_service.py
 Job: python svlearn/compute/ann_indexer_job.py
 
 14. Search: 
-These 2 services should be running,
-Service URL: http://localhost:8800/faiss_search
-Service URL: http://localhost:8800/rerank
+These 3 services should be running,
+Mysql running
+ElasticSearch Service URL: https://localhost:9200
+Faiss Service URL: http://localhost:8800/faiss_search
+rerank Service URL: http://localhost:8800/rerank
+Finally:
 Service URL: http://localhost:8800/search
 Fast:
 python svlearn/service/rest/fastapi/faiss_search_fastapi_service.py
