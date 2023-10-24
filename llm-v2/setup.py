@@ -15,6 +15,6 @@ setup(
     description="Text-extraction from given file.",
     url="https://packages.python.org/svlearn-bootcamp",
     packages=find_packages(),
-    long_description=read('README'),
+    long_description=read('README.md'),
     classifiers=["Operating System::OS Independent"],
 )
