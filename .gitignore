@@ -159,3 +159,5 @@ data/
 FaissService/faiss.index
 FaissService/app.log
 FaissService/.env
+.vscode/settings.json
+llm-v2/.checkpoints/imagebind_huge.pth

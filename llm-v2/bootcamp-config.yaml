@@ -35,6 +35,7 @@ database:
 documents:
   source-dir: /Users/praveen/dev/llm-bootcamp/Assignment1/data_files
   image-dir:  /Volumes/MacX_1TB/devX/data/image/images/25kphotos_sample/
+  # image-dir:  /Volumes/MacX_1TB/devX/data/image/images/unsplash-25k-photos-backup/
 
 #
 # Spark details
