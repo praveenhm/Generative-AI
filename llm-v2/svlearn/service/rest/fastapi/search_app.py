@@ -7,7 +7,7 @@ from fastapi.staticfiles import StaticFiles
 from svlearn.config import ConfigurationMixin
 from svlearn.utils.compute_utils import get_port
 from svlearn.service.rest.fastapi.search_fastapi_service  import HybridSearch 
-from svlearn.compute.image_extraction_job import text_query
+from svlearn.compute.image_embedding_job import text_query
 
 dispatcher = HybridSearch()
 dispatcher.initialize()
