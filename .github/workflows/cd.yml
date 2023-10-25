@@ -1,0 +1,22 @@
+name: Continuous Deployment
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy:
+    runs-on: rockylinux:9-minimal
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy to on-premise server
+      run: |
+        echo "$DEPLOYMENT_SSH_KEY" > deploy_key.pem
+        chmod 600 deploy_key.pem
+        scp -i deploy_key.pem -r ./app my-deploy-user@my-server-ip:/path/to/app
+        ssh -i deploy_key.pem my-deploy-user@my-server-ip 'cd /path/to/app && ./deploy-script.sh'
+      env:
+        DEPLOYMENT_SSH_KEY: ${{ secrets.MY_SERVER_SSH_PRIVATE_KEY }}
