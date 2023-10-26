@@ -12,7 +12,8 @@
 
 | Feature | Description |
 |---------|-------------|
-| Raw Image | The original image. |
+| Image path| The original image. |
+| Text description | Text description of the Image |
 | Standardized Image | Image standardized to a fixed size. |
 | Segmentation Masks | Masks that segment the image. |
 | Bounding Boxes | Boxes that highlight objects in the image. |
