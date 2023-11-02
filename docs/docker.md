@@ -9,9 +9,8 @@ rm lazydocker_0.16_Linux_x86_64.tar.gz
 echo 'export PATH=$HOME/bin:$PATH' >> ~/.zshrc
 source ~/.zshrc
 
-# Running docker image
-docker run --rm -it <IMAGE_NAME>
-
+# Running docker image, name and remove immediately
+docker run --name <name> --rm -it <IMAGE_NAME>
 
 # Pull the Image:
 docker pull <image-name>
@@ -42,5 +41,5 @@ docker rm <container-name-or-id>
 
 # To run a Python container interactively, use the -it flags and attach a shell, like bash:
 
-docker run -it python:latest bash
+docker run --name py3 -it python:latest bash
 
