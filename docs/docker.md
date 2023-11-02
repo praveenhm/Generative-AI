@@ -1,4 +1,20 @@
 ```zsh
+# Install lazydocker
+mkdir -p $HOME/bin
+wget https://github.com/jesseduffield/lazydocker/releases/download/v0.16/lazydocker_0.16_Linux_x86_64.tar.gz
+tar xzvf lazydocker_0.16_Linux_x86_64.tar.gz lazydocker -C $HOME/bin
+rm lazydocker_0.16_Linux_x86_64.tar.gz
+
+# Add $HOME/bin to your PATH if not already added
+echo 'export PATH=$HOME/bin:$PATH' >> ~/.zshrc
+source ~/.zshrc
+
+# Running docker image
+docker run --rm -it <IMAGE_NAME>
+
+
+
+```zsh
 # Pull the Image:
 docker pull <image-name>
 
