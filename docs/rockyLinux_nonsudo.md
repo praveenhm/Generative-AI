@@ -40,3 +40,29 @@ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
 source ~/.zshrc
 
+=========docker==========
+
+# To control docker.service, run: 
+ systemctl --user (start|stop|restart) docker.service
+
+# To run docker.service on system startup, run: 
+ sudo loginctl enable-linger praveen
+
+
+uname -r
+whoami
+grep ^$(whoami): /etc/subuid
+grep ^$(whoami): /etc/subgid
+id -u
+curl -o docker-rootless.sh https://get.docker.com/rootless
+chmod +x docker-rootless.sh
+SKIP_IPTABLES=1 ./docker-rootless.sh
+
+docker info
+docker status
+docker ps
+ps aux | grep dockerd\n
+
+
+#install lazydocker
+
