@@ -13,8 +13,6 @@ source ~/.zshrc
 docker run --rm -it <IMAGE_NAME>
 
 
-
-```zsh
 # Pull the Image:
 docker pull <image-name>
 
