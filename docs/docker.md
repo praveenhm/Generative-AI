@@ -17,7 +17,7 @@ docker run --rm -it <IMAGE_NAME>
 docker pull <image-name>
 
 # Run the Image:
-docker run <options> <image-name>
+docker run <options> <image-name> 
 
 # For example, to run Nginx:
 docker run -d -p 8080:80 --name nginx-container nginx
