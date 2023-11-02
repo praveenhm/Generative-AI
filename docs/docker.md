@@ -12,6 +12,9 @@ source ~/.zshrc
 # Running docker image, name and remove immediately
 docker run --name <name> --rm -it <IMAGE_NAME>
 
+# docker images are stored in this directory
+~/.local/share/docker
+
 # Pull the Image:
 docker pull <image-name>
 
@@ -27,6 +30,9 @@ docker ps
 # To see all containers (including stopped ones):
 docker ps -a
 
+# To check images
+docker images
+
 # Interact with the Container:
 docker exec -it <container-name-or-id> /bin/sh
 
@@ -37,7 +43,10 @@ docker stop <container-name-or-id>
 docker rm <container-name-or-id>
 
 
-## When docker is run with an image like python:latest, it starts a container with that image and runs the default command associated with the image. For the python:latest image, the default command is python3. Since there's no script or interactive shell attached to it, the Python interpreter exits immediately after being started, which results in the container also exiting immediately.
+## When docker is run with an image like python:latest, it starts a container with that image and runs the default
+command associated with the image. For the python:latest image, the default command is python3. Since there's no
+script or interactive shell attached to it, the Python interpreter exits immediately after being started, which
+results in the container also exiting immediately.
 
 # To run a Python container interactively, use the -it flags and attach a shell, like bash:
 
