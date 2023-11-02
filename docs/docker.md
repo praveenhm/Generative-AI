@@ -44,9 +44,9 @@ docker rm <container-name-or-id>
 
 
 ## When docker is run with an image like python:latest, it starts a container with that image and runs the default
-command associated with the image. For the python:latest image, the default command is python3. Since there's no
-script or interactive shell attached to it, the Python interpreter exits immediately after being started, which
-results in the container also exiting immediately.
+# command associated with the image. For the python:latest image, the default command is python3. Since there's no
+# script or interactive shell attached to it, the Python interpreter exits immediately after being started, which
+# results in the container also exiting immediately.
 
 # To run a Python container interactively, use the -it flags and attach a shell, like bash:
 
