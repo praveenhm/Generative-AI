@@ -62,14 +62,14 @@ docker run --name py3 -it python:latest bash
 # To control docker.service, run: 
 
 # basic commands
-  docker info
-  docker status
-  docker ps
-  ps aux | grep dockerd
+	  docker info
+	  docker status
+	  docker ps
+	  ps aux | grep dockerd
 
 
 # Testing docker
-  systemctl (start|stop|restart|status) docker.service
+  	systemctl (start|stop|restart|status) docker.service
 	ps aux | grep dockerd #check docker process running
 		
 # docker logs
@@ -78,8 +78,3 @@ docker run --name py3 -it python:latest bash
 
 Run local docker:
 docker run --rm --name pyContainer -v ./:/work --network=host -it python:3.11.6-slim-bullseye /bin/bash
-
-
-
-
-
