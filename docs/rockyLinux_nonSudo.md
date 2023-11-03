@@ -20,10 +20,10 @@ CPPFLAGS="-fPIC" ./configure --prefix=/home/praveen/local
 make
 make install
 
-### Now back to Zsh
+# Now back to Zsh
 cd /home/praveen/zsh-*
 
-### Clean up any previous build artifacts
+# Clean up any previous build artifacts
 make clean
 
 # Configure and compile again
@@ -31,16 +31,13 @@ make clean
 make
 make install
 
-
-### Install ohmyzsh
+# Install ohmyzsh
 git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
-##start new shell
+#start new shell
 /home/praveen/local/bin/zsh
-
 source ~/.zshrc
-
 
 ==============ncdu================
 
