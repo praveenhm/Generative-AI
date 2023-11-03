@@ -1,3 +1,5 @@
+### This is basic setting up on rockyLinux as a nonSudo user
+
 ```zsh
 # install Zsh locally by getting latest from Zsh website
 wget -O zsh.tar.xz https://sourceforge.net/projects/zsh/files/latest/download
