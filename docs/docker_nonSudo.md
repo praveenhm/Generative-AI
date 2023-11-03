@@ -35,17 +35,11 @@ source ~/.zshrc
 # docker images are stored in this directory
 ~/.local/share/docker
 
-# Running docker image, name and remove immediately
-docker run --name <name> --rm -it <IMAGE_NAME>
-
 # Pull the Image:
 docker pull <image-name>
 
-# Run the Image:
-docker run <options> <image-name> 
-
-# Check Running Containers:
-docker ps
+# Running docker image, name and remove immediately
+docker run --name <name> --rm -it <IMAGE_NAME>
 
 # To see all containers (including stopped ones):
 docker ps -a
