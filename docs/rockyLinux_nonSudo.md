@@ -1,10 +1,9 @@
 ```zsh
-## install Zsh locally
-# Get Zsh source (you can find the latest version from the Zsh website)
+# install Zsh locally by getting latest from Zsh website
 wget -O zsh.tar.xz https://sourceforge.net/projects/zsh/files/latest/download
 tar -xf zsh.tar.xz
 
-# Download ncurses source
+# Zsh requires ncurses source
 wget https://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.2.tar.gz
 tar -xzvf ncurses-6.2.tar.gz
 cd ncurses-6.2
@@ -19,7 +18,7 @@ CPPFLAGS="-fPIC" ./configure --prefix=/home/praveen/local
 make
 make install
 
-### Zsh
+### Now back to Zsh
 cd /home/praveen/zsh-*
 
 ### Clean up any previous build artifacts
@@ -40,29 +39,26 @@ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
 source ~/.zshrc
 
-=========docker==========
+======Install docker as rootless==========
 
-# To control docker.service, run: 
- systemctl --user (start|stop|restart) docker.service
-
-# To run docker.service on system startup, run: 
- sudo loginctl enable-linger praveen
-
-
+# Follow instructions on docker site, prerequisite
 uname -r
 whoami
 grep ^$(whoami): /etc/subuid
 grep ^$(whoami): /etc/subgid
 id -u
+
 curl -o docker-rootless.sh https://get.docker.com/rootless
 chmod +x docker-rootless.sh
 SKIP_IPTABLES=1 ./docker-rootless.sh
 
+# To control docker.service, run: 
+systemctl --user (start|stop|restart) docker.service
+
 docker info
 docker status
 docker ps
-ps aux | grep dockerd\n
-
+ps aux | grep dockerd
 
 ==============ncdu================
 
@@ -70,12 +66,10 @@ wget https://dev.yorhel.nl/download/ncdu-2.3-linux-x86_64.tar.gz
 tar -xzvf ncdu-1.16.tar.gz
 mv ncdu $HOME/local/bin/
 
-# below steps are not required
-ln -s $HOME/local/include/ncurses/curses.h $HOME/local/include/
-ln -s $HOME/local/include/ncurses/ncurses.h $HOME/local/include/
-
-./configure --prefix=$HOME/local CPPFLAGS="-I$HOME/local/include" LDFLAGS="-L$HOME/local/lib" LIBS="-lncurses"
-
-make
-make install
+===========vs code cli================
+# install vsc code cli for remote ssh
+curl -Lk 'https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64' --output vscode_cli.tar.gz
+tar -xf vscode_cli.tar.gz
+mv code ~/bin
+code tunnel
 
