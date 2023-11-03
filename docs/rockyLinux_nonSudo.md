@@ -39,26 +39,6 @@ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
 source ~/.zshrc
 
-======Install docker as rootless==========
-
-# Follow instructions on docker site, prerequisite
-uname -r
-whoami
-grep ^$(whoami): /etc/subuid
-grep ^$(whoami): /etc/subgid
-id -u
-
-curl -o docker-rootless.sh https://get.docker.com/rootless
-chmod +x docker-rootless.sh
-SKIP_IPTABLES=1 ./docker-rootless.sh
-
-# To control docker.service, run: 
-systemctl --user (start|stop|restart) docker.service
-
-docker info
-docker status
-docker ps
-ps aux | grep dockerd
 
 ==============ncdu================
 
