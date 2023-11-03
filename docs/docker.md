@@ -1,4 +1,26 @@
 ```zsh
+======Install docker as rootless==========
+
+# Follow instructions on docker site, prerequisite
+uname -r
+whoami
+grep ^$(whoami): /etc/subuid
+grep ^$(whoami): /etc/subgid
+id -u
+
+curl -o docker-rootless.sh https://get.docker.com/rootless
+chmod +x docker-rootless.sh
+SKIP_IPTABLES=1 ./docker-rootless.sh
+
+# To control docker.service, run: 
+systemctl --user (start|stop|restart) docker.service
+
+docker info
+docker status
+docker ps
+ps aux | grep dockerd
+
+
 # Install lazydocker
 mkdir -p $HOME/bin
 wget https://github.com/jesseduffield/lazydocker/releases/download/v0.16/lazydocker_0.16_Linux_x86_64.tar.gz
