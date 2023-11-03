@@ -15,6 +15,7 @@ SKIP_IPTABLES=1 ./docker-rootless.sh
 # To control docker.service, run: 
 systemctl --user (start|stop|restart) docker.service
 
+# basic commands
 docker info
 docker status
 docker ps
@@ -31,20 +32,17 @@ rm lazydocker_0.16_Linux_x86_64.tar.gz
 echo 'export PATH=$HOME/bin:$PATH' >> ~/.zshrc
 source ~/.zshrc
 
-# Running docker image, name and remove immediately
-docker run --name <name> --rm -it <IMAGE_NAME>
-
 # docker images are stored in this directory
 ~/.local/share/docker
+
+# Running docker image, name and remove immediately
+docker run --name <name> --rm -it <IMAGE_NAME>
 
 # Pull the Image:
 docker pull <image-name>
 
 # Run the Image:
 docker run <options> <image-name> 
-
-# For example, to run Nginx:
-docker run -d -p 8080:80 --name nginx-container nginx
 
 # Check Running Containers:
 docker ps
@@ -64,12 +62,14 @@ docker stop <container-name-or-id>
 # Remove the Container:
 docker rm <container-name-or-id>
 
+# For example, to run Nginx:
+docker run -d -p 8080:80 --name nginx-container nginx
+
 
 ## When docker is run with an image like python:latest, it starts a container with that image and runs the default
 # command associated with the image. For the python:latest image, the default command is python3. Since there's no
 # script or interactive shell attached to it, the Python interpreter exits immediately after being started, which
 # results in the container also exiting immediately.
-
 # To run a Python container interactively, use the -it flags and attach a shell, like bash:
 
 docker run --name py3 -it python:latest bash
