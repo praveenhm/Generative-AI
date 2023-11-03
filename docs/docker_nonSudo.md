@@ -12,15 +12,6 @@ curl -o docker-rootless.sh https://get.docker.com/rootless
 chmod +x docker-rootless.sh
 SKIP_IPTABLES=1 ./docker-rootless.sh
 
-# To control docker.service, run: 
-systemctl --user (start|stop|restart) docker.service
-
-# basic commands
-docker info
-docker status
-docker ps
-ps aux | grep dockerd
-
 
 # Install lazydocker
 mkdir -p $HOME/bin
@@ -67,4 +58,28 @@ docker run -d -p 8080:80 --name nginx-container nginx
 # To run a Python container interactively, use the -it flags and attach a shell, like bash:
 
 docker run --name py3 -it python:latest bash
+
+# To control docker.service, run: 
+
+# basic commands
+  docker info
+  docker status
+  docker ps
+  ps aux | grep dockerd
+
+
+# Testing docker
+  systemctl (start|stop|restart|status) docker.service
+	ps aux | grep dockerd #check docker process running
+		
+# docker logs
+	sudo journalctl -xeu docker.service
+	sudo journalctl -u docker.service
+
+Run local docker:
+docker run --rm --name pyContainer -v ./:/work --network=host -it python:3.11.6-slim-bullseye /bin/bash
+
+
+
+
 
