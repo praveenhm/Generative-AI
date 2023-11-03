@@ -64,5 +64,18 @@ docker ps
 ps aux | grep dockerd\n
 
 
-#install lazydocker
+==============ncdu================
+
+wget https://dev.yorhel.nl/download/ncdu-2.3-linux-x86_64.tar.gz
+tar -xzvf ncdu-1.16.tar.gz
+mv ncdu $HOME/local/bin/
+
+# below steps are not required
+ln -s $HOME/local/include/ncurses/curses.h $HOME/local/include/
+ln -s $HOME/local/include/ncurses/ncurses.h $HOME/local/include/
+
+./configure --prefix=$HOME/local CPPFLAGS="-I$HOME/local/include" LDFLAGS="-L$HOME/local/lib" LIBS="-lncurses"
+
+make
+make install
 
