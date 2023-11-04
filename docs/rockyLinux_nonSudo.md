@@ -80,3 +80,18 @@ conda create --name llama --clone base
 # pytorch 2.1 with cuda 12.1
 pip3 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu121
 
+
+
+
+========otheres, not really required============
+
+# below steps are not required, use this as template for ncurses
+ln -s $HOME/local/include/ncurses/curses.h $HOME/local/include/
+ln -s $HOME/local/include/ncurses/ncurses.h $HOME/local/include/
+
+./configure --prefix=$HOME/local CPPFLAGS="-I$HOME/local/include" LDFLAGS="-L$HOME/local/lib" LIBS="-lncurses"
+
+make
+make install
+
+==================================END======================
