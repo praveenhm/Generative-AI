@@ -52,3 +52,31 @@ tar -xf vscode_cli.tar.gz
 mv code ~/bin
 code tunnel
 
+===============Anaconda python 3.11 & pytorch 2.1 + Cuda 12.1==========================
+wget https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
+bash Anaconda3-2023.09-0-Linux-x86_64.sh
+
+# Add it to .Zshrc
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('apps/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "apps/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "apps/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="apps/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# If you want to activate a specific environment by default when opening a terminal
+# conda activate your_environment_name
+
+conda create --name llama --clone base
+
+# pytorch 2.1 with cuda 12.1
+pip3 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu121
+
