@@ -60,8 +60,6 @@ docker run -d -p 8080:80 --name nginx-container nginx
 
 docker run --name py3 -it python:latest bash
 
-# To control docker.service, run: 
-
 # basic commands
 	  docker info
 	  docker status
