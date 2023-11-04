@@ -71,9 +71,11 @@ docker run --name py3 -it python:latest bash
   	systemctl (start|stop|restart|status) docker.service
 	ps aux | grep dockerd #check docker process running
 		
-# docker logs
+# docker logs, this doesn't work
 	sudo journalctl -xeu docker.service
 	sudo journalctl -u docker.service
+	docker logs container_id # works
+
 
 Run local docker:
 docker run --rm --name pyContainer -v ./:/work --network=host -it python:3.11.6-slim-bullseye /bin/bash
