@@ -15,9 +15,10 @@ SKIP_IPTABLES=1 ./docker-rootless.sh
 
 # Install lazydocker
 mkdir -p $HOME/bin
-wget https://github.com/jesseduffield/lazydocker/releases/download/v0.16/lazydocker_0.16_Linux_x86_64.tar.gz
-tar xzvf lazydocker_0.16_Linux_x86_64.tar.gz lazydocker -C $HOME/bin
-rm lazydocker_0.16_Linux_x86_64.tar.gz
+wget https://github.com/jesseduffield/lazydocker/releases/download/v0.23.1/lazydocker_0.23.1_Linux_x86_64.tar.gz
+tar xzvf lazydocker_0.23.1_Linux_x86_64.tar.gz
+mv lazydocker ~/bin
+find / -name lazydocker 2>/dev/null
 
 # Add $HOME/bin to your PATH if not already added
 echo 'export PATH=$HOME/bin:$PATH' >> ~/.zshrc
