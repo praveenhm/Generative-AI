@@ -79,6 +79,8 @@ docker run --name py3 -it python:latest bash
 
 Run local docker:
 docker run --rm --name pyContainer -v ./:/work --network=host -it python:3.11.6-slim-bullseye /bin/bash
+docker run --rm --name py3 -v ./:/work --network=host --user [UID]:[GID] -it python:3.11.6-slim-bullseye bash
+
 
 # run local docker use all gpu
 docker run --name py3 --gpus all -v ${PWD}:/scratch_space -it python:latest
