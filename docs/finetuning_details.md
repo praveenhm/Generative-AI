@@ -1,12 +1,12 @@
 ### Fine-Tuning Process for Language Learning Models (LLM)
 
 0. **Basic steps**:
-   -First we need to convert the raw text video lecture file into jsonl file format.
-   -Do the proper prompt to convert the raw text file to jsonl format.
-   -The format we are using is {“context”: “...“, “question”: “...“, “answer”: “...“}
-   -This is context based chat-bot
-   -Use the jsonl file to fine tune
-   -use huggingface accelerate https://huggingface.co/docs/accelerate/index
+   - First we need to convert the raw text video lecture file into jsonl file format.
+   - Do the proper prompt to convert the raw text file to jsonl format.
+   - The format we are using is {“context”: “...“, “question”: “...“, “answer”: “...“}
+   - This is context based chat-bot
+   - Use the jsonl file to fine tune
+   - Use huggingface accelerate https://huggingface.co/docs/accelerate/index
 
 
 2. **Introduction to Training / Fine-Tuning**:
