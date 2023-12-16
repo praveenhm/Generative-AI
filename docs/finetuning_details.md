@@ -14,6 +14,11 @@
 3. **Data Formatting**:
    - The most common format used for fine-tuning tasks is the #instruction, #input, #output format.
    - Properly shaping the data in this format is essential and often the most challenging part of developing an LLM for various company needs.
+   -  - #instruction,#input,#output is a versatile format suitable for both chat and instruction following.
+   - Example dataset in this format: [Alpaca Cleaned Dataset](https://huggingface.co/datasets/yahma/alpaca-cleaned).
+   - The Dolly dataset, which uses context to enrich data, is another example: [Databricks Dolly 15k](https://huggingface.co/datasets/databricks/databricks-dolly-15k).
+
+8. **Data Structuring**:
 
 4. **Data Privacy and Processing Methods**:
    - Many opt to use GPT4 for data processing, with Azure APIs being a preferred choice for privacy concerns, despite higher costs.
@@ -30,9 +35,5 @@
    - Depending on the model, dataset size, and parameters, use 1, 4, or 8 A100s for optimal results.
 
 7. **Data Format Examples**:
-   - #instruction,#input,#output is a versatile format suitable for both chat and instruction following.
-   - Example dataset in this format: [Alpaca Cleaned Dataset](https://huggingface.co/datasets/yahma/alpaca-cleaned).
-   - The Dolly dataset, which uses context to enrich data, is another example: [Databricks Dolly 15k](https://huggingface.co/datasets/databricks/databricks-dolly-15k).
-
-8. **Data Structuring**:
+  
    - To prevent confusion in the dataset, use delimiters like `### Answer:` for clarity and organization.
