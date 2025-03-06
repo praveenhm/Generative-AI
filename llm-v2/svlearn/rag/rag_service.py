@@ -15,7 +15,7 @@ from svlearn.service.rest.fastapi.search_fastapi_service import HybridSearch
 # Setting up the API base and dummy API key
 openai.api_base = "http://localhost:8001/v1"
 openai.api_key = (
-    "DUMMY_KEY_NOT_USED"  # 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
+    "DUMMY_KEY_NOT_USED"  
 )
 
 dispatcher = HybridSearch()
